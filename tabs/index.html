@@ -5,8 +5,46 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>原生 js 实现一个可切换的 tabs</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+  <div class="wrap">
+    <nav>
+      <ul class="nav-container">
+        <li class="active">选项1</li>
+        <li>选项2</li>
+        <li>选项3</li>
+      </ul>
+    </nav>
+    <main class="tab-container">
+      <div class="tab active">内容 1</div>
+      <div class="tab">内容 2</div>
+      <div class="tab">内容 3</div>
+    </main>
+  </div>
+
+  <script>
+    const navButtonArray = document.querySelectorAll('.nav-container>li'),
+          tabsArray = document.querySelectorAll('.tab')
+
+    // 这里也可以使用事件代理
+    for (let i = 0; i < navButtonArray.length; i++) {
+      navButtonArray[i].addEventListener('click', (e) => {
+        navButtonArray.forEach(ele => {
+          ele.classList.remove('active')
+        });
+
+        let target = e.target
+        target.classList.add('active')
+        let index = [...navButtonArray].indexOf(target)
+        tabsArray.forEach(ele => {
+          ele.classList.remove('active')
+        })
+        tabsArray[index].classList.add('active')
+      })
+    }
+
+
+  </script>
 </body>
 </html>
