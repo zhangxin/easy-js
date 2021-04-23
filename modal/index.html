@@ -6,7 +6,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>原生 js 实现模态框</title>
 </head>
+<link rel="stylesheet" href="style.css">
 <body>
+  <div class="ct">
+    <button class="showButton">点我</button>
   
+    <div class="modal">
+      <div class="card">
+        <header>
+          <h3>我是标题</h3>
+          <span class="close">x</span>
+        </header>
+        <main>
+          <p>我是内容</p>
+          <p>我是内容</p>
+        </main>
+        <footer>
+          <span class="cancel">取消</span>
+          <span class="confirm">确定</span>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const showButton = document.querySelector('.showButton'),
+          modalPanel = document.querySelector('.modal'),
+          container = document.querySelector('.ct'),
+          colse = document.querySelector('.close'),
+          cancel = document.querySelector('.cancel')
+    
+    showButton.addEventListener('click',() => {
+      modalPanel.classList.add('active')
+    })
+
+    // 事件代理。善用 e.target。注意 e.target 就是点击的最具体的目标，不包含子元素。可以打印出来看看
+    modalPanel.addEventListener('click', (e)=> {
+      let target = e.target
+      if(target === modalPanel || target === colse || target === cancel) {
+        modalPanel.classList.remove('active')
+      }
+
+      console.log(target)
+    })
+  </script>
 </body>
 </html>
