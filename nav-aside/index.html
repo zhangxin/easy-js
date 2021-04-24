@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery 侧边导航</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="nav-container">
+    <ul class="navbar-panel">
+      <li>珠宝玉器 <span>></span>
+        <div class="goods-panel">
+          <span>翡翠</span>
+          <span>玉石</span>
+          <span>宝石</span>
+          <span>水晶</span>
+          <span>玛瑙</span>
+          <span>珍珠</span>
+          <span>钻石</span>
+          <span>琥珀</span>
+          <span>和田</span>
+          <span>琥珀</span>
+        </div>
+      </li>
+      <li>珠宝玉器 
+        <span>></span>
+        <div class="goods-panel">
+          <span>翡翠</span>
+          <span>玉石</span>
+          <span>宝石</span>
+          <span>水晶</span>
+          <span>玛瑙</span>
+          <span>珍珠</span>
+         
+        </div>
+      </li>
+      <li>珠宝玉器 
+        <span>>
+        <div class="goods-panel">
+          <span>翡翠</span>
+          <span>玉石</span>
+          <span>宝石</span>
+          <span>水晶</span>
+        </div>
+      </span></li>
+      <li>珠宝玉器 
+        <span>></span>
+        <div class="goods-panel">
+          <span>翡翠</span>
+          <span>玉石</span>
+          <span>宝石</span>
+          <span>水晶</span>
+          <span>玛瑙</span>
+          <span>珍珠</span>
+        </div></li>
+      <li>珠宝玉器 
+        <span>></span>
+        <div class="goods-panel">
+          <span>翡翠</span>
+          <span>玉石</span>
+          <span>宝石</span>
+          <span>水晶</span>
+        </div>
+      </li>
+    </ul>
+  </aside>
+
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+  <script>
+    let $navPanel = $('.navbar-panel>li')
+
+    // $navPanel.each(function() {
+      $navPanel.on('mouseenter', function() {
+        $(this).find('.goods-panel').show()
+      })
+
+      $navPanel.on('mouseleave', function() {
+          $(this).find('.goods-panel').hide()
+        })
+    // })
+  </script>
+</body>
+</html>

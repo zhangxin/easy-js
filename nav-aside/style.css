@@ -1,0 +1,49 @@
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-container {
+  width: 200px;
+  margin: 30px 20px;
+  background-color: red;
+} 
+
+.navbar-panel>li {
+  padding: 10px 10px 10px 10px;
+  border-bottom: 1px dotted #fff;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+}
+
+.navbar-panel>li>span {
+  float: right;
+}
+
+
+.goods-panel {
+  display: none;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  cursor: default;
+  position: absolute;
+  border: 1px solid #ccc;
+  left: 200px;
+  top: 0;
+  color: #000;
+  font-weight: normal;
+  font-size: 14px;
+  width: 200px;
+}
+
+.goods-panel>span {
+  display: inline-block;
+  padding: 5px;
+  margin-right: 35px;
+  cursor: pointer;
+}
+
